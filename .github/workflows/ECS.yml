@@ -40,7 +40,7 @@ jobs:
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: Serviço_API-Go
+        service: Servico_API-Go
         cluster: API-Go-Will
         wait-for-service-stability: true
 
@@ -53,7 +53,7 @@ jobs:
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: task-definition.json.old
-        service: Serviço_API-Go
+        service: Servico_API-Go
         cluster: API-Go-Will
         wait-for-service-stability: true
 
