@@ -33,7 +33,7 @@ jobs:
           USER=${{ secrets.DBUSER }}
           PASSWORD=${{ secrets.DBPASSWORD }}
           DBNAME=${{ secrets.DBNAME }}
-          DBPORT=5432
+          DBPORT=${{ secrets.DBPORT }}
           PORT=8000
           
     - name: Deploy Amazon ECS task definition
@@ -43,3 +43,9 @@ jobs:
         service: Servico_API-Go
         cluster: API-Go-Will
         wait-for-service-stability: true
+
+    - name: Requisição
+      continue-on-error: true 
+      run: sleep 30s ; wget LB-API-Go-979203790.us-east-2.elb.amazonaws.com:8000/will
+
+
