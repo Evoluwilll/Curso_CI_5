@@ -29,10 +29,10 @@ jobs:
         container-name: Go
         image: evoluwill/go_ci:${{github.run_number}}
         environment-variables: |
-          DBHOST=${{ arn:aws:rds:us-east-2:975050214313:db:api-go-dev }}
-          DBUSER=${{ postgres }}
-          DBPASSWORD=${{ secrets.DBPASSWORD }}
-          DBNAME=${{ root }}
+          HOST=${{ secrets.DBHOST }}
+          USER=${{ secrets.DBUSER }}
+          PASSWORD=${{ secrets.DBPASSWORD }}
+          DBNAME=${{ secrets.DBNAME }}
           DBPORT=${{ 5432 }}
           PORT=8000
           
